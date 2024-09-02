@@ -110,6 +110,7 @@ nav {
     align-items: center;    
 }
 
+
 nav img {
     width: 150px;
 }
@@ -125,8 +126,8 @@ nav img {
 }
 
 
-.nav-box {
-     display: none;
+.nav-box{
+    display: none;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -250,6 +251,7 @@ a.red:hover{
     text-decoration-color: var(--soft-red);
     text-decoration-thickness: 8px;
 }
+
 /* sevices */
 .services {
     display: grid;
@@ -398,7 +400,6 @@ footer ul li a:hover {
 }
 
 
-/* Media query for desktop view */
 @media (min-width: 45em) {
     header {
         background-image: url('../images/desktop/image-header.jpg');
@@ -407,17 +408,41 @@ footer ul li a:hover {
     header h1 {
         font-size: 2.5rem;
     }
-
     .hamburger-icon {
         display: none;
     }
 
-    nav ul {
+    nav {
         display: flex;
-        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    nav ul li a:hover {
+    /* Ensure the nav-box is visible in desktop mode */
+    .nav-box {
+        display: flex;
+        gap: 2rem;
+        position: static;
+        transform: none;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    .nav-box li {
+        list-style: none;
+    }
+
+    .nav-box li a {
+        color:var(--white);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .nav-box li a:hover {
         color: var(--very-dark-desaturated-blue);
         background-color: var(--white);
         text-transform: uppercase;
@@ -427,7 +452,7 @@ footer ul li a:hover {
         border-radius: 50px;
     }
 
-    .about-section{
+    .about-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -440,12 +465,12 @@ footer ul li a:hover {
         text-align: left;
     }
 
-    picture{
+    picture {
         grid-area: image;
         width: 100%;
-
     }
-    .reverse{
+
+    .reverse {
         grid-template-areas: 
         "image text";
     }
@@ -454,21 +479,18 @@ footer ul li a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
     /* testimonials */
-    
     .testimonials {
         grid-template-rows: auto 1fr;
         grid-template-columns: repeat(3, 1fr);        
     }
-    
+
     .client-testimonials {
         grid-row: 1;
         grid-column: 1 / -1;
     }
 
     .projects {
-        display:flex;
+        display: flex;
     }
-
 }
